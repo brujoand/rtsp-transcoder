@@ -24,6 +24,6 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Publih the docker image
+      - name: Publish the docker image
         if: github.event_name != 'pull_request'
-        run: docker publish brujoand/rtsp-transcoder:${GITHUB_RUN_ID}
+        run: docker push brujoand/rtsp-transcoder:${GITHUB_RUN_ID}
